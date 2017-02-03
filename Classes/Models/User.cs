@@ -68,6 +68,7 @@ namespace Classes.Models
         }
 
         public virtual ICollection<Role> Roles { get; set; }
+        public virtual ICollection<Data> Datas { get; set; }
 
         #endregion
 
@@ -76,6 +77,7 @@ namespace Classes.Models
         public User()
         {
             Roles = new List<Role>();
+            Datas = new List<Data>();
         }
 
         public User(string firstname, string lastname, string password) : this()

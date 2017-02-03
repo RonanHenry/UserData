@@ -15,12 +15,25 @@
             <RowDefinition Height="40"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <Label x:Name="JsonLabel" Content="Enter JSON string:" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="14" />
-        <TextBox x:Name="Login" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="14" Padding="6" Margin="10, 0, 10, 10" />
+        <TextBox x:Name="Json" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="14" Padding="6" Margin="10, 0, 10, 10" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Data.DataValue, Mode=TwoWay}" />
+        
+        <ScrollViewer Grid.Row="1" Grid.Column="1" Margin="0, 0, 0, 10">
+            <ListView x:Name="DataList" Margin="0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock HorizontalAlignment="Left" Text="{Binding DataValue}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
 
-        <Button x:Name="LoginBtn" Grid.Row="2" Grid.Column="0" Content="Insert" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="30, 5" Margin="0, 0, 0, 10" />
+        <Button x:Name="InsertJsonBtn" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Content="Insert" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="30, 5" Margin="0, 0, 0, 10" />
     </Grid>
 </Page>

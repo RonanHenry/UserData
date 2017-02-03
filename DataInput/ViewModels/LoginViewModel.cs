@@ -11,7 +11,7 @@ namespace DataInput.ViewModels
     {
         private LoginView loginView;
 
-        public LoginViewModel(Frame contentFrame, User layoutUser)
+        public LoginViewModel(Frame contentFrame)
         {
             loginView = new LoginView();
             loginView.DataContext = this;
@@ -29,8 +29,7 @@ namespace DataInput.ViewModels
 
             if (user.Id != 0)
             {
-                
-                new DataViewModel();
+                new DataViewModel(user);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using Classes.Models;
 using Utilities.Database;
@@ -20,7 +21,8 @@ namespace Ultilities.Database
                     .Where(x => x.Login == login)
                     .Where(x => x.Password == password)
                     .First();
-                // Entry(user).Collection(x => x.Roles).Load();
+                DbSetT.Attach(user);
+                //Entry(user).Collection(x => x.Roles).Load();
             }
             catch (Exception)
             {

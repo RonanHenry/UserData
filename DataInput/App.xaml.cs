@@ -27,7 +27,7 @@ namespace DataInput
 
         private void Window_loaded(object sender, RoutedEventArgs e)
         {
-            LayoutViewModel layoutViewModel = new LayoutViewModel();
+            new LayoutViewModel();
         }
     }
 }

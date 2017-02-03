@@ -19,7 +19,7 @@ namespace DataInput.ViewModels
             layoutView = new LayoutView();
             layoutView.DataContext = this;
             LayoutUser = new User();
-            new LoginViewModel(layoutView.ContentFrame, LayoutUser);
+            new LoginViewModel(layoutView.ContentFrame);
             AddUserCommand = new RelayCommand(ExecAddUser, CanAddUser);
 
             Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive).Content = layoutView;
